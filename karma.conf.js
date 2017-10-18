@@ -3,17 +3,21 @@
 
 module.exports = function (config) {
     config.set({
-        
+
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: ['jasmine', "karma-typescript"],
 
         files: [
-            { pattern: "Src/Server/View/**/*.ts" }
+            { pattern: "wwwroot/App/**/*.ts" }
         ],
 
         preprocessors: {
-            "Src/Server/View/**/*.ts": ["karma-typescript"]
+            "wwwroot/App/**/*.ts": ["karma-typescript"]
+        },
+
+        karmaTypescriptConfig: {
+            tsconfig: "./tsconfig.json"    
         },
 
         // test results reporter to use
